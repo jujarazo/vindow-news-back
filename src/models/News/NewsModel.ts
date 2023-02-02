@@ -4,8 +4,8 @@ import { Provider, Image } from './types';
 
 @Model()
 export class NewsModel {
-  @ObjectID('_id')
-  _id: string;
+  @ObjectID('id')
+  id: string;
 
   @Property()
   description: string;
@@ -19,8 +19,8 @@ export class NewsModel {
   @Property()
   body: string;
 
-  @Property()
-  snippet: string;
+  // @Property()
+  // snippet: string;
 
   @Property()
   keywords: string;

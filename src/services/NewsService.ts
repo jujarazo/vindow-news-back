@@ -28,22 +28,18 @@ export class NewsService {
     this.reload();
   }
 
-  // async reload() {
-  //   const news = await this.News.find({});
-
-  //   if (news.length === 0) {
-  //     const promises = require('../../resources/news.json').map(
-  //       (news: NewsModel) => this.save(news)
-  //     );
-  //     await Promise.all(promises);
-  //   }
-  // }
-
+  /**
+   * Loads all the news from the resources to the db.
+   */
   async reload() {
-    const promises = require('../../resources/news.json').map(
-      (news: NewsModel) => this.save(news)
-    );
-    await Promise.all(promises);
+    const news = await this.News.find({});
+
+    if (news.length === 0) {
+      const promises = require('../../resources/news.json').map(
+        (news: NewsModel) => this.save(news)
+      );
+      await Promise.all(promises);
+    }
   }
 
   /**

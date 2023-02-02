@@ -25,6 +25,6 @@ export class AuthMiddleware {
     const rapidApiHost = req.get('x-rapidapi-host');
 
     if (rapidApiKey !== this.rapidApiKey || rapidApiHost !== this.rapidApiHost)
-      throw new Unauthorized('Unauthorized');
+      throw new Unauthorized('Invalid API key.');
   }
 }

@@ -16,11 +16,11 @@ export class NewsModel {
   @Property()
   url: string;
 
-  // @Property()
-  // body: string;
+  @Property()
+  body: string;
 
-  // @Property()
-  // snippet: string;
+  @Property()
+  snippet: string;
 
   @Property()
   keywords: string;

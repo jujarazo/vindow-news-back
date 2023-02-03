@@ -19,9 +19,6 @@ export class NewsModel {
   @Property()
   body: string;
 
-  // @Property()
-  // snippet: string;
-
   @Property()
   keywords: string;
 

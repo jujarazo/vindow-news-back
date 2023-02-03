@@ -44,8 +44,8 @@ RUN yarn install --pure-lockfile --production
 COPY ./views ./views
 COPY processes.config.js .
 
-EXPOSE 8081
-ENV PORT 8081
+EXPOSE 8083
+ENV PORT 8083
 ENV NODE_ENV production
 
 CMD ["pm2-runtime", "start", "processes.config.js", "--env", "production"]

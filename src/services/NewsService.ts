@@ -13,6 +13,7 @@ type Query = {
   $or?: {
     title?: RegExp;
     body?: RegExp;
+    description?: RegExp;
   }[];
 };
 
@@ -56,7 +57,7 @@ export class NewsService {
 
     if (params.q?.length) {
       const regex = new RegExp(params.q, 'i');
-      filter.$or = [{ title: regex }, { body: regex }];
+      filter.$or = [{ title: regex }, { body: regex }, { description: regex }];
     }
 
     const pageSize = Number(params.pageSize || 10);
